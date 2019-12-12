@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,5 +13,19 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    // return $router->app->version();
+    return 'DynamiaTravel api service is running... ';
+});
+
+//obtener llave
+$router->get('/key', function(){
+    return Str::random(32);
+});
+
+$router->group(['prefix' => 'api'], function() use ($router){
+    $router->get('travel', 'TravelController@index');
+    // $router->get('travel/{id}', 'TravelController@show');
+    // $router->post('travel', 'TravelController@save');
+    // $router->put('travel/{id}', 'TravelController@update');
+    // $router->delete('travel/{id}', 'TravelController@delete');
 });
