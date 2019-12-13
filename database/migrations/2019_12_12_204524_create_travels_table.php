@@ -15,7 +15,7 @@ class CreateTravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             //id, fecha, origen, destino y costo.
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->date('travel_date');
             $table->string('origin');
             $table->string('destination');
