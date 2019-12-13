@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Travel;
 
 class TravelController extends Controller
 {
@@ -15,6 +16,7 @@ class TravelController extends Controller
     }
     
     public function index(){
-        return response()->json([], 200);
+        $travels = Travel::all();
+        return response()->json($travels, 200);
     }
 }
