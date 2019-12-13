@@ -23,9 +23,9 @@ $router->get('/key', function(){
 });
 
 $router->group(['prefix' => 'api'], function() use ($router){
-    $router->get('travel', 'TravelController@index');
-    // $router->get('travel/{id}', 'TravelController@show');
-    // $router->post('travel', 'TravelController@save');
-    // $router->put('travel/{id}', 'TravelController@update');
-    // $router->delete('travel/{id}', 'TravelController@delete');
+    $router->get('travels', 'TravelController@index');
+    $router->get('travels/{id}', 'TravelController@show');
+    $router->post('travels', 'TravelController@save');
+    $router->put('travels/{id}', 'TravelController@update');
+    $router->delete('travels/{id}', 'TravelController@delete');
 });
