@@ -16,7 +16,7 @@ class CreatePassengersTable extends Migration
         Schema::create('passengers', function (Blueprint $table) {
             //id, cédula, nombre, teléfono, email
             $table->integer('id')->autoIncrement();
-            $table->date('ci');
+            $table->string('ci');
             $table->string('name');
             $table->string('phone');
             $table->string('email')->unique();

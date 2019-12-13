@@ -29,3 +29,11 @@ $router->group(['prefix' => 'api'], function() use ($router){
     $router->put('travels/{id}', 'TravelController@update');
     $router->delete('travels/{id}', 'TravelController@delete');
 });
+
+$router->group(['prefix' => 'api'], function() use ($router){
+    $router->get('passengers', 'PassengerController@index');
+    $router->get('passengers/{id}', 'PassengerController@show');
+    $router->post('passengers', 'PassengerController@save');
+    $router->put('passengers/{id}', 'PassengerController@update');
+    $router->delete('passengers/{id}', 'PassengerController@delete');
+});
